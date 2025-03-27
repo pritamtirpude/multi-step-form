@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { cn } from '../lib/util';
 import { personalInfoSchema } from '../schema/personalInfoschema';
 import { useStepStore } from '../store/step-store';
 import FormFooterButtons from './FormFooterButtons';
@@ -32,13 +33,13 @@ const PersonalInfoForm = () => {
   });
 
   return (
-    <div className="h-full w-full">
+    <div className="relative -top-9 mx-auto h-full w-[90%] rounded-lg bg-white px-6 py-8 shadow-md lg:top-0 lg:mx-0 lg:w-auto lg:bg-none lg:p-0 lg:shadow-none">
       <form onSubmit={onSubmit} className="flex h-full w-full flex-col">
         <TitleAndDescription
           title="Personal Info"
           description="Please provide your name, email address, and phone number."
         />
-        <div className="mt-10 flex size-full flex-col gap-6">
+        <div className="mt-5 flex size-full flex-col gap-6 lg:mt-10">
           <div className="flex flex-col">
             {/* Name */}
             <div className="flex items-center justify-between">
@@ -52,7 +53,10 @@ const PersonalInfoForm = () => {
               )}
             </div>
             <input
-              className="border-form-light-grey mt-2 rounded-md border px-4 py-3 focus:outline-none"
+              className={cn(
+                'border-form-light-grey hover:border-form-purple mt-2 rounded-md border px-4 py-3 focus:outline-none',
+                errors?.name && 'border-form-red'
+              )}
               {...register('name')}
               type="text"
               placeholder="e.g. Stephen King"
@@ -71,7 +75,10 @@ const PersonalInfoForm = () => {
               )}
             </div>
             <input
-              className="border-form-light-grey mt-2 rounded-md border px-4 py-3 focus:outline-none"
+              className={cn(
+                'border-form-light-grey hover:border-form-purple mt-2 rounded-md border px-4 py-3 focus:outline-none',
+                errors?.email && 'border-form-red'
+              )}
               {...register('email')}
               type="email"
               placeholder="e.g. stephenking@lorem.com"
@@ -90,7 +97,10 @@ const PersonalInfoForm = () => {
               )}
             </div>
             <input
-              className="border-form-light-grey mt-2 rounded-md border px-4 py-3 focus:outline-none"
+              className={cn(
+                'border-form-light-grey hover:border-form-purple mt-2 rounded-md border px-4 py-3 focus:outline-none',
+                errors?.phone && 'border-form-red'
+              )}
               {...register('phone')}
               type="text"
               placeholder="e.g. +91 9988776644"

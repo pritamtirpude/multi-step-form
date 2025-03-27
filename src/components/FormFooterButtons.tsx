@@ -5,7 +5,7 @@ const FormFooterButtons = () => {
   const { decreaseStep, step } = useStepStore();
 
   return (
-    <div className="flex w-full items-center justify-between bg-white p-4 lg:bg-none lg:p-0">
+    <div className="fixed bottom-0 left-0 flex w-full items-center justify-between bg-white p-4 lg:relative lg:bg-none lg:p-0">
       {step !== 1 && (
         <button
           className="text-form-grey hover:text-form-denim cursor-pointer text-[16px] font-medium transition"
