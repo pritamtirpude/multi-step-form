@@ -13,6 +13,8 @@
   --color-form-skyblue: #bee2fd;
   --color-form-hover: #164a8a;
   --color-form-very-light-grey: #f8f9ff;
+
+  --text-regular: 16px;
 }
 
 @font-face {
