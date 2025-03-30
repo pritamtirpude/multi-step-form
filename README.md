@@ -13,7 +13,8 @@ A responsive and interactive multi-step form built with modern web technologies.
 
 ## 📸 Screenshots
 
-_Add screenshots or a demo GIF here._
+![image](https://github.com/user-attachments/assets/a20dcad7-db81-44a7-9682-7d82d43c0a75)
+
 
 ## 🎯 Features
 
