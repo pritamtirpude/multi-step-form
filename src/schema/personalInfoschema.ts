@@ -8,7 +8,7 @@ export const personalInfoSchema = z.object({
   phone: z
     .string()
     .min(1, { message: 'This field is required' })
-    .regex(/^(\+91\s)?[6-9]\d{9}$/, {
-      message: 'Must be a valid mobile number',
+    .regex(/^\+1\s\d{3}\s\d{3}\s\d{3}$/, {
+      message: 'Must be a valid phone number',
     }),
 });
