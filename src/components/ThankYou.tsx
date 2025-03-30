@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import iconThankYou from '../assets/images/icon-thank-you.svg';
 
 const container = {
   hidden: { opacity: 0 },
@@ -30,7 +31,7 @@ const ThankYou = () => {
         variants={item}
         className="flex justify-center"
       >
-        <img src="/src/assets/images/icon-thank-you.svg" alt="thank you icon" />
+        <img src={iconThankYou} alt="thank you icon" />
       </motion.div>
 
       <motion.div variants={item} className="mt-8 flex flex-col gap-3.5">
